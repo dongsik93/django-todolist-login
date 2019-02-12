@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block bb %}
+
+    <h1>list page</h1>
+    {% for todo in todos %}
+        <h3>{{todo.title}}</h3>
+        <p>{{todo.user}}</p>
+        <a href="{% url 'todos:delete' todo.id %}">삭제</a>
+    {% endfor %}
+{% endblock %}
